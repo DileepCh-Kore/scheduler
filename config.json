@@ -1,0 +1,14 @@
+{
+    "port": 4001,
+    "snowFlakeAPIendpoint" : "https://d2go.eu-west-1.snowflakecomputing.com/api/v2/statements?requestId=",
+    "retryURL" : "https://d2go.eu-west-1.snowflakecomputing.com/api/v2/statements",
+    "divAndBuStatement" : "select distinct ORGUNITTEXT_DIV, ORGUNIT_LEVEL4, ORGUNITTEXT_BU, ORGUNIT_LEVEL5 from PRD_DISTRIBUTE.SCM_DATAMART.V_SCMCORE_ORG_ID where FISCYEAR = '2022' and ORGUNITTEXT_OPER <> 'ENERGY' and ORGUNITTEXT_DIV is not null and ORGUNIT_LEVEL4 is not null and ORGUNITTEXT_BU is not null and ORGUNIT_LEVEL5 is not null;",
+    "catAndCommodityStatement" : "select distinct CAT_TEXT, CATEGORY, COM_TEXT, COMMODITY from PRD_DISTRIBUTE.SCM_DATAMART.V_SCMCORE_WS_ID where FISCYEAR = '2022' and WORKSTREAM = '02_PC'  and CAT_TEXT is not null  and CATEGORY is not null and COM_TEXT is not null and COMMODITY is not null;",
+    "regionStatement": "select distinct REGSLT_COUNTRY_T, REGSLT_COUNTRY from PRD_DISTRIBUTE.SCM_DATAMART.V_SCMCORE_REG_ID where REGSLT_FYEAR = '2022' and REGSLT_COUNTRY_T is not null and REGSLT_COUNTRY is not null",
+    "esnStatement": "select distinct ESN, DESCENG from PRD_DISTRIBUTE.SCM_DATAMART.V_SCMCORE_PCESNC_ID Where VALID = 'Y' Order by ESN ASC;",
+    "database": "PRD_DISTRIBUTE",
+    "schema": "SCM_DATAMART",
+    "warehouse" : "QUA_SCM_DATAMART_PR_REPORTING_KOREAI",
+    "role" : "QUA_SCM_DATAMART_PR_TU_CONSUMER_KOREAI_ROLE",
+    "jwtURL" : "https://siemens-qa.kore.ai/qa/jwt"
+}
